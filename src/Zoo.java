@@ -12,7 +12,33 @@ public class Zoo {
         System.out.println(String.format("Created %s", animal));
     }
 
+
     static Animal createsAnimal (String animalName) {
+       Animal animal;
+        switch (animalName){
+            case "snake":
+               animal = new Snake();
+                break;
+            case "lion":
+                animal = new Lion();
+                break;
+            case "condor":
+                animal = new Condor();
+                break;
+            case "alligator":
+                animal = new Reptile(){
+                    @Override
+                    public String toString()
+
+                    {
+                        return "Alligator'";
+                    }
+                };
+                break;
+            default:
+                animal = new Animal();
+
+        }
         if (animalName.equals("snake")){
             return new Snake();
         }
